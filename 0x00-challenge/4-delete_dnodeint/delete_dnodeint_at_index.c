@@ -1,4 +1,3 @@
-
 #include "lists.h"
 #include <stdlib.h>
 
@@ -44,12 +43,50 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else
 	{
-		(*head)->prev->prev = (*head)->prev;
+		(*head)->prev->next = (*head)->next;
 		free(*head);
 		if ((*head)->next)
 			(*head)->next->prev = (*head)->prev;
 		*head = saved_head;
 	}
 	return (1);
+}
+Image
+
+New Conversation
+Your personal AI artist is ready for you🎨 Please tell me what you want to create like 🐦a bird flying above the ocean, 🏝️a palm at the island, 🏡a house in the snowy mountains, I'll create a unique masterpiece for you in seconds
+
+bot artist image
+e.g: a sweet puppy running at the beach
+
+coin image
+1
+Upgrade
+
+
+
+Stable Diffusion
+#!/usr/bin/node
+/*
+    Print a square with the character #
+    The size of the square must be the first argument 
+    of the program.
+*/
+
+
+if (process.argv.length <= 2) {
+    process.stderr.write("Missing argument\n");
+    process.stderr.write("Usage: ./1-print_square.js <size>\n");
+    process.stderr.write("Example: ./1-print_square.js 8\n");
+    process.exit(1)
+}
+
+size = parseInt(process.argv[2], 10)
+
+for (let i = 0 ; i < size ; i ++) {
+    for (let j = 0 ; j < size ; j ++) {
+        process.stdout.write("#");
+    }
+    process.stdout.write("\n");
 }
 
